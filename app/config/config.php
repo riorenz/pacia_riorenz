@@ -80,6 +80,7 @@ $config['ENVIRONMENT']             = 'production';
 |
 */
 $config['base_url'] = 'https://pacia-riorenz.onrender.com/';
+//$config['base_url'] = 'http://localhost:8080';
 
 
 
