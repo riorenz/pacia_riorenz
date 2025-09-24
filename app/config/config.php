@@ -64,7 +64,7 @@ $config['VERSION']                 = '4.2.2';
 | -------------------------------------------------------------------
 | Values: development and production
 */
-$config['ENVIRONMENT']             = 'development';
+$config['ENVIRONMENT']             = 'production';
 
 /*
 |--------------------------------------------------------------------------
@@ -79,7 +79,9 @@ $config['ENVIRONMENT']             = 'development';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] = 'https://pacia-riorenz.onrender.com/';
+$config['base_url'] = 'https://festin-jeremy.onrender.com/';
+
+
 
 /*
 |--------------------------------------------------------------------------

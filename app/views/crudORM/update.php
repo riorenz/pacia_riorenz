@@ -1,42 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Update User</title>
+  <title>Update Student</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
 </head>
-<body class="bg-gradient-to-r from-purple-100 via-pink-100 to-yellow-100 min-h-screen flex items-center justify-center py-12">
+<body class="bg-gray-50 text-gray-800">
+  <div class="min-h-screen flex items-center justify-center py-12 px-4">
+    <div class="w-full max-w-lg">
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="px-6 py-5 bg-indigo-600">
+          <h3 class="text-white text-lg font-semibold text-center">Update Student</h3>
+        </div>
 
-<div class="w-full max-w-md">
-  <div class="bg-white shadow-2xl rounded-3xl border border-gray-200">
-    <div class="bg-gradient-to-r from-purple-600 to-pink-500 text-white text-center py-6">
-      <h4 class="text-2xl font-bold tracking-wide">Update User</h4>
-      <p class="text-purple-100 mt-1 text-sm">Edit the details below</p>
-    </div>
-    <div class="p-8">
+        <div class="p-6">
+          <form action="<?= site_url('students/update/'.rawurlencode($stu['id'] ?? '')); ?>" method="POST" class="space-y-4">
+            <div>
+              <label for="lastname" class="block text-sm font-medium text-gray-700 mb-1"></label>
+              <input id="lastname" name="lastname" required
+                     class="w-full px-3 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                     value="<?= htmlspecialchars($stu['lastname'] ?? '', ENT_QUOTES); ?>" />
+            </div>
 
-      <form action="<?=site_url(url: '/students/update/'.$stu['id']);?>" method="POST" class="space-y-5">
-        <input type="text" id="lastname" name="lastname" value="<?=$stu['lastname'];?>" 
-               class="w-full px-5 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 text-gray-700 placeholder-gray-400 font-medium">
+            <div>
+              <label for="firstname" class="block text-sm font-medium text-gray-700 mb-1"></label>
+              <input id="firstname" name="firstname" required
+                     class="w-full px-3 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                     value="<?= htmlspecialchars($stu['firstname'] ?? '', ENT_QUOTES); ?>" />
+            </div>
 
-        <input type="text" id="firstname" name="firstname" value="<?=$stu['firstname'];?>" 
-               class="w-full px-5 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 text-gray-700 placeholder-gray-400 font-medium">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1"></label>
+              <input id="email" name="email" type="email" required
+                     class="w-full px-3 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                     value="<?= htmlspecialchars($stu['email'] ?? '', ENT_QUOTES); ?>" />
+            </div>
 
-        <input type="text" id="email" name="email" value="<?=$stu['email'];?>" 
-               class="w-full px-5 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 text-gray-700 placeholder-gray-400 font-medium">
-
-        <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-xl font-semibold hover:bg-purple-700 transition-colors shadow-lg">Update User</button>
-      </form>
-
+            <div class="flex gap-3">
+              <button type="submit" class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Update Student</button>
+              <a href="<?= site_url('students/get-all'); ?>" class="px-4 py-2 border rounded-md text-indigo-700 hover:bg-indigo-50">Back to List</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p class="text-center text-sm text-gray-500 mt-3">Edit student details</p>
     </div>
   </div>
-</div>
-
 </body>
 </html>
-  
