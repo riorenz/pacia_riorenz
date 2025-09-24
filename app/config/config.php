@@ -79,7 +79,7 @@ $config['ENVIRONMENT']             = 'production';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] = 'https://festin-jeremy.onrender.com/';
+$config['base_url'] = 'https://pacia-riorenz.onrender.com/';
 
 
 
